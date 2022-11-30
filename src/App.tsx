@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 // import logo from "./logo.svg";
-import "./App.css";
 import { Button, Flex } from "@chakra-ui/react";
 import Cookies from "js-cookie";
 
