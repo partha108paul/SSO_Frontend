@@ -5,9 +5,10 @@ import Cookies from "js-cookie";
 
 const App = () => {
   const [data, setData] = useState<any>();
-  const ViewResult = async () => {
+  const ScenesSocial = async () => {
     console.log("Token", data && data.result.token);
-    Cookies.set("token", data?.result?.token);
+    window.location.replace('https://bureau.scenes.social/signin')
+    // Cookies.set("token", data?.result?.token);
   };
 
   const RandomColor = async () => {
@@ -30,6 +31,9 @@ const App = () => {
       .then((r) => r.json())
       .catch((error) => console.log("error", error));
     setData(response);
+    if (data & data?.result) {
+      Cookies.set("token", data?.result?.token);
+    }
   };
 
   return (
@@ -71,7 +75,7 @@ const App = () => {
         _focus={{
           bg: "blue.500",
         }}
-        onClick={() => ViewResult()}
+        onClick={() => ScenesSocial()}
       >
         SSO Login
       </Button>
